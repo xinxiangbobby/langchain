@@ -29,11 +29,13 @@ from langchain.llms.huggingface_hub import HuggingFaceHub
 from langchain.llms.huggingface_pipeline import HuggingFacePipeline
 from langchain.llms.huggingface_text_gen_inference import HuggingFaceTextGenInference
 from langchain.llms.human import HumanInputLLM
+from langchain.llms.koboldai import KoboldApiLLM
 from langchain.llms.llamacpp import LlamaCpp
 from langchain.llms.manifest import ManifestWrapper
 from langchain.llms.modal import Modal
 from langchain.llms.mosaicml import MosaicML
 from langchain.llms.nlpcloud import NLPCloud
+from langchain.llms.octoai_endpoint import OctoAIEndpoint
 from langchain.llms.openai import AzureOpenAI, OpenAI, OpenAIChat
 from langchain.llms.openllm import OpenLLM
 from langchain.llms.openlm import OpenLM
@@ -48,6 +50,7 @@ from langchain.llms.self_hosted import SelfHostedPipeline
 from langchain.llms.self_hosted_hugging_face import SelfHostedHuggingFaceLLM
 from langchain.llms.stochasticai import StochasticAI
 from langchain.llms.textgen import TextGen
+from langchain.llms.tongyi import Tongyi
 from langchain.llms.vertexai import VertexAI
 from langchain.llms.writer import Writer
 
@@ -80,6 +83,7 @@ __all__ = [
     "HuggingFacePipeline",
     "HuggingFaceTextGenInference",
     "HumanInputLLM",
+    "KoboldApiLLM",
     "LlamaCpp",
     "TextGen",
     "ManifestWrapper",
@@ -101,8 +105,10 @@ __all__ = [
     "SelfHostedHuggingFaceLLM",
     "SelfHostedPipeline",
     "StochasticAI",
+    "Tongyi",
     "VertexAI",
     "Writer",
+    "OctoAIEndpoint",
 ]
 
 type_to_cls_dict: Dict[str, Type[BaseLLM]] = {
@@ -134,6 +140,7 @@ type_to_cls_dict: Dict[str, Type[BaseLLM]] = {
     "huggingface_pipeline": HuggingFacePipeline,
     "huggingface_textgen_inference": HuggingFaceTextGenInference,
     "human-input": HumanInputLLM,
+    "koboldai": KoboldApiLLM,
     "llamacpp": LlamaCpp,
     "textgen": TextGen,
     "modal": Modal,
@@ -149,6 +156,7 @@ type_to_cls_dict: Dict[str, Type[BaseLLM]] = {
     "self_hosted": SelfHostedPipeline,
     "self_hosted_hugging_face": SelfHostedHuggingFaceLLM,
     "stochasticai": StochasticAI,
+    "tongyi": Tongyi,
     "vertexai": VertexAI,
     "openllm": OpenLLM,
     "openllm_client": OpenLLM,
